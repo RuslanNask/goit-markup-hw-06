@@ -70,15 +70,30 @@
               <form class="form">
                 <div class="form-field">
                   <label class="form-lable">Имя</label>
-                  <input class="form-input" type="text" name="name" id="name" />
+                  <div class="input-wrap">
+                    <input class="form-input" type="text" name="name" id="name" />
+                    <svg class="form-icon" width="18px" height="18px">
+                      <use href="./images/icons.svg#icon-person-black"></use>
+                    </svg>
+                  </div>
                 </div>
                 <div class="form-field">
                   <label for="tel" class="form-lable">Телефон</label>
-                  <input class="form-input" type="tel" name="tel" id="tel" />
+                  <div class="input-wrap">
+                    <input class="form-input" type="tel" name="tel" id="tel" />
+                    <svg class="form-icon" width="18px" height="18px">
+                      <use href="./images/icons.svg#icon-phone-black"></use>
+                    </svg>
+                  </div>
                 </div>
                 <div class="form-field">
                   <label for="mail" class="form-lable">Почта</label>
-                  <input class="form-input" type="email" name="mail" id="mail" />
+                  <div class="input-wrap">
+                    <input class="form-input" type="email" name="mail" id="mail" />
+                    <svg class="form-icon" width="18px" height="18px">
+                      <use href="./images/icons.svg#icon-email-black"></use>
+                    </svg>
+                  </div>
                 </div>
                 <div class="form-field">
                   <label for="coment">Коментарий</label>
@@ -90,10 +105,12 @@
                     placeholder="Введите текст"
                   ></textarea>
                 </div>
-
-                <input type="checkbox" name="policy" id="policy" />
-                <label for="policy">Соглашаюсь с рассылкой и принимаю Условия договора</label>
-
+                <div class="form-field">
+                  <input type="checkbox" name="policy" id="policy" />
+                  <label for="policy"
+                    >Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label
+                  >
+                </div>
                 <button type="submit" class="btn-otprav">Отправить</button>
               </form>
             </div>

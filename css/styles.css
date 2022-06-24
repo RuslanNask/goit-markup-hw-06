@@ -574,6 +574,16 @@ body {
   display: block;
   text-align: start;
 }
+.input-wrap {
+  position: relative;
+}
+.form-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-text-color);
+}
 .form-field input {
   width: 100%;
   height: 40px;
@@ -582,9 +592,18 @@ body {
   background-color: transparent;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: transparent;
 }
-
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
+}
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--background-buttom-accent);
+}
 .form-field textarea {
+  /* display: block; */
   margin-top: 4px;
   padding: 0;
   resize: none;
