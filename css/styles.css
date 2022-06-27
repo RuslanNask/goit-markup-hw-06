@@ -187,7 +187,7 @@ body {
   left: 0;
   bottom: -1px;
   border-radius: 2px;
-
+  opacity: 1;
   background-color: var(--accent-color);
 }
 .headerlink::after {
@@ -202,8 +202,8 @@ body {
   background-color: var(--accent-color);
   opacity: 0;
 
-  transform-origin: center left;
-  transform: scaleX(0);
+  /* transform-origin: center left; */
+  transform: scaleX(1);
   transition: transform 250ms var(--cubic), opacity 250ms var(--cubic);
 }
 .headerlink:hover::after,
@@ -219,7 +219,7 @@ body {
 
   background-color: var(--accent-color);
   opacity: 1;
-  transform: scaleX(1);
+  transform: scaleX(0);
 }
 .headerlink:hover,
 .headerlink:focus {
@@ -313,7 +313,10 @@ body {
   color: var(--accent-color-text);
   background-color: var(--background-buttom-accent);
 }
-
+.buttons.current {
+  color: var(--accent-color-text);
+  background-color: var(--accent-color);
+}
 /* ------------ PROJECT - SITKA -----------*/
 .project {
   display: flex;
@@ -473,7 +476,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  /* z-index: 1; */
 
   background-color: var(--modal-bcg);
   transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
@@ -523,6 +526,9 @@ body {
   background: var(--background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   outline: transparent;
+  transition-property: var(--background-buttom-accent);
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .btn-modal-close:hover,
 .btn-modal-close:focus {
@@ -531,9 +537,10 @@ body {
 }
 
 .btn-otprav {
-  /* position: relative; */
+  display: block;
   margin-top: 30px;
-  display: inline-flex;
+  margin-right: auto;
+  margin-left: auto;
   min-width: 200px;
   height: 50px;
 
@@ -587,23 +594,31 @@ body {
 }
 .input-wrap {
   position: relative;
+  margin-top: 4px;
 }
 .form-icon {
   position: absolute;
-  left: 12px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--primary-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .form-input {
   width: 100%;
   height: 40px;
-  margin-top: 4px;
   padding-left: 42px;
   background-color: transparent;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .form-input:hover,
 .form-input:focus {
@@ -614,19 +629,27 @@ body {
   fill: var(--accent-color);
 }
 .form-field textarea {
+  display: block;
   margin-top: 4px;
-  padding: 0;
+  padding: 12px 16px;
   resize: none;
   width: 100%;
   height: 120px;
+
+  color: rgba(117, 117, 117, 0.5);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: transparent;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .form-field textarea::placeholder {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  padding: 12px 16px;
+
   color: rgba(117, 117, 117, 0.5);
 }
 .form-field textarea:hover,
@@ -635,6 +658,7 @@ body {
 }
 .check-text {
   display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 14px;
   line-height: 1.71;
@@ -665,7 +689,9 @@ body {
 .input-check:checked + .check-text .check-icon {
   fill: var(--accent-color-text);
 }
-
+.input-check:focus + .check-text span {
+  border-color: var(--background-buttom-accent);
+}
 /* ------- іконка - v - через ----- before -------- */
 /* .check-text::before {
   content: '';
@@ -1014,7 +1040,10 @@ body {
   color: var(--accent-color-text);
 }
 .footer-secondary-input {
-  margin-left: 93px;
+  margin-left: auto;
+}
+.form-footer {
+  display: flex;
 }
 .footer-input {
   width: 358px;
@@ -1023,15 +1052,24 @@ body {
   padding-left: 16px;
   padding-bottom: 15px;
 
+  color: rgba(255, 255, 255, 0.6);
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .footer-input::placeholder {
   font-size: 16px;
   line-height: calc(20 / 16);
   color: rgba(255, 255, 255, 0.6);
+}
+.footer-input:hover,
+.footer-input:focus {
+  background-color: var(--accent-color);
 }
 .input-text {
   font-weight: 700;
@@ -1041,11 +1079,11 @@ body {
   color: var(--accent-color-text);
 }
 .button-input {
-  position: relative;
-  display: inline-flex;
+  /* position: relative; */
+  display: flex;
   min-width: 200px;
   height: 50px;
-  padding: 10px 62px 10px 29px;
+  padding: 10px 28px 10px 29px;
   border: 0px solid transparent;
   font-family: inherit;
   font-weight: 700;
@@ -1071,7 +1109,5 @@ body {
   background-color: var(--background-buttom-zakaz-hover);
 }
 .icon-send {
-  position: absolute;
-  top: 13px;
-  right: 28px;
+  margin-left: 10px;
 }
