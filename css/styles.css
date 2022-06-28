@@ -202,7 +202,7 @@ body {
   background-color: var(--accent-color);
   opacity: 0;
 
-  /* transform-origin: center left; */
+  transform-origin: right left;
   transform: scaleX(1);
   transition: transform 250ms var(--cubic), opacity 250ms var(--cubic);
 }
